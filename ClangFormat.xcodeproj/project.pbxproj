@@ -87,6 +87,7 @@
 		90EB746622E151E60047A222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90F98F4F22E173A50067F920 /* ClangFormatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClangFormatExtension.swift; sourceTree = "<group>"; };
 		90F98F6422E174600067F920 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		EAC4144722E1F4B00039A890 /* VersionInformation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VersionInformation.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +211,7 @@
 				904EE68322E14968000E924D /* Project-Debug.xcconfig */,
 				904EE68422E14973000E924D /* Project-Release.xcconfig */,
 				904EE68222E1495F000E924D /* Project-Shared.xcconfig */,
+				EAC4144722E1F4B00039A890 /* VersionInformation.xcconfig */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
