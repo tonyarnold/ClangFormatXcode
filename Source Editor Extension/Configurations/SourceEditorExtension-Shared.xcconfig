@@ -1,0 +1,13 @@
+PRODUCT_NAME = ClangFormat
+PRODUCT_BUNDLE_IDENTIFIER = $(SHARED_PRODUCT_BUNDLE_IDENTIFIER).XcodeSourceEditorExtension
+
+INFOPLIST_FILE = Source Editor Extension/Supporting Files/Info.plist
+CODE_SIGN_ENTITLEMENTS = Source Editor Extension/Supporting Files/Entitlements.entitlements
+ENABLE_HARDENED_RUNTIME = YES
+
+OTHER_LDFLAGS = $(LLVM_ARCHIVES)
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks
+
+SKIP_INSTALL = YES
+
+OTHER_CPLUSPLUSFLAGS = $(OTHER_CFLAGS) $(LLVM_CXXFLAGS)

@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		559B23EB1D7EBDA300937AB3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559B23E91D7EBDA300937AB3 /* MainMenu.xib */; };
+		5B1624D622B57D9500338348 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559B23F81D7EBDB700937AB3 /* Cocoa.framework */; };
+		5B1624E222B57D9500338348 /* ClangFormat.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5B1624D522B57D9500338348 /* ClangFormat.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5B1624E722B57DAD00338348 /* ClangFormatCommand.mm in Sources */ = {isa = PBXBuildFile; fileRef = 559B24181D7EBDC400937AB3 /* ClangFormatCommand.mm */; };
+		5B1624E822B57E5500338348 /* libcurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 557D38B71D7F270E00708269 /* libcurses.tbd */; };
+		904EE67222E139C5000E924D /* LowercaseValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904EE67122E139C5000E924D /* LowercaseValueTransformer.swift */; };
+		904EE67422E13A33000E924D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904EE67322E13A33000E924D /* AppDelegate.swift */; };
+		90503E7C22E1E8FA00AE92A0 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90503E7B22E1E8FA00AE92A0 /* Security.swift */; };
+		90503E7D22E1E90600AE92A0 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90503E7B22E1E8FA00AE92A0 /* Security.swift */; };
+		90503E7F22E1EA4400AE92A0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90503E7E22E1EA4400AE92A0 /* UserDefaults.swift */; };
+		90503E8022E1EA9700AE92A0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90503E7E22E1EA4400AE92A0 /* UserDefaults.swift */; };
+		90EB746722E151E60047A222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90EB746622E151E60047A222 /* Assets.xcassets */; };
+		90F98F6522E174600067F920 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F98F6422E174600067F920 /* XcodeKit.framework */; };
+		90F98F6822E174850067F920 /* ClangFormatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F98F4F22E173A50067F920 /* ClangFormatExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B1624E022B57D9500338348 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 559B23D61D7EBDA300937AB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B1624D422B57D9500338348;
+			remoteInfo = "clang-format";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		559B240A1D7EBDB700937AB3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5B1624E222B57D9500338348 /* ClangFormat.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9066E06222E180AB00CA7361 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		556DCDEF1D7EF694005956C8 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
+		557D38B71D7F270E00708269 /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
+		559B23DE1D7EBDA300937AB3 /* ClangFormat Configuration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ClangFormat Configuration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		559B23EA1D7EBDA300937AB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		559B23EC1D7EBDA300937AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		559B23F81D7EBDB700937AB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		559B24131D7EBDC400937AB3 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
+		559B24171D7EBDC400937AB3 /* ClangFormatCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClangFormatCommand.h; sourceTree = "<group>"; };
+		559B24181D7EBDC400937AB3 /* ClangFormatCommand.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ClangFormatCommand.mm; sourceTree = "<group>"; };
+		559B241A1D7EBDC400937AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C8203F1D87F81300006D07 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		5B1624D522B57D9500338348 /* ClangFormat.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ClangFormat.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		904EE67122E139C5000E924D /* LowercaseValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowercaseValueTransformer.swift; sourceTree = "<group>"; };
+		904EE67322E13A33000E924D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		904EE67A22E147C0000E924D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		904EE68222E1495F000E924D /* Project-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Shared.xcconfig"; sourceTree = "<group>"; };
+		904EE68322E14968000E924D /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		904EE68422E14973000E924D /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Release.xcconfig"; sourceTree = "<group>"; };
+		904EE68722E14A1D000E924D /* Application-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Application-Shared.xcconfig"; sourceTree = "<group>"; };
+		904EE68822E14A1D000E924D /* Application-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Application-Debug.xcconfig"; sourceTree = "<group>"; };
+		904EE68922E14A1D000E924D /* Application-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Application-Release.xcconfig"; sourceTree = "<group>"; };
+		904EE68A22E14A40000E924D /* SourceEditorExtension-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SourceEditorExtension-Shared.xcconfig"; sourceTree = "<group>"; };
+		904EE68B22E14A40000E924D /* SourceEditorExtension-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SourceEditorExtension-Debug.xcconfig"; sourceTree = "<group>"; };
+		904EE68C22E14A40000E924D /* SourceEditorExtension-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SourceEditorExtension-Release.xcconfig"; sourceTree = "<group>"; };
+		904EE68D22E14AB3000E924D /* LLVM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LLVM.xcconfig; sourceTree = "<group>"; };
+		90503E7B22E1E8FA00AE92A0 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		90503E7E22E1EA4400AE92A0 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		90EB746622E151E60047A222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		90F98F4F22E173A50067F920 /* ClangFormatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClangFormatExtension.swift; sourceTree = "<group>"; };
+		90F98F6422E174600067F920 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B1624D222B57D9500338348 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B1624D622B57D9500338348 /* Cocoa.framework in Frameworks */,
+				90F98F6522E174600067F920 /* XcodeKit.framework in Frameworks */,
+				5B1624E822B57E5500338348 /* libcurses.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		559B23D51D7EBDA300937AB3 = {
+			isa = PBXGroup;
+			children = (
+				55C8203F1D87F81300006D07 /* LICENSE.md */,
+				904EE67A22E147C0000E924D /* README.md */,
+				559B23E01D7EBDA300937AB3 /* Application */,
+				559B24111D7EBDC400937AB3 /* Source Editor Extension */,
+				904EE67B22E14948000E924D /* Shared */,
+				559B23F71D7EBDB700937AB3 /* Frameworks */,
+				559B23DF1D7EBDA300937AB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		559B23DF1D7EBDA300937AB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				559B23DE1D7EBDA300937AB3 /* ClangFormat Configuration.app */,
+				5B1624D522B57D9500338348 /* ClangFormat.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		559B23E01D7EBDA300937AB3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				904EE68522E149BF000E924D /* Configurations */,
+				90EB746422E151CC0047A222 /* Resources */,
+				904EE67922E147A9000E924D /* Sources */,
+				904EE67522E145E7000E924D /* Supporting Files */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		559B23F71D7EBDB700937AB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				559B23F81D7EBDB700937AB3 /* Cocoa.framework */,
+				557D38B71D7F270E00708269 /* libcurses.tbd */,
+				90F98F6422E174600067F920 /* XcodeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		559B24111D7EBDC400937AB3 /* Source Editor Extension */ = {
+			isa = PBXGroup;
+			children = (
+				904EE68622E149C6000E924D /* Configurations */,
+				904EE67822E147A2000E924D /* Sources */,
+				559B24121D7EBDC400937AB3 /* Supporting Files */,
+			);
+			path = "Source Editor Extension";
+			sourceTree = "<group>";
+		};
+		559B24121D7EBDC400937AB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				559B24131D7EBDC400937AB3 /* Entitlements.entitlements */,
+				559B241A1D7EBDC400937AB3 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		904EE67522E145E7000E924D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				556DCDEF1D7EF694005956C8 /* Entitlements.entitlements */,
+				559B23EC1D7EBDA300937AB3 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		904EE67822E147A2000E924D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				559B24171D7EBDC400937AB3 /* ClangFormatCommand.h */,
+				559B24181D7EBDC400937AB3 /* ClangFormatCommand.mm */,
+				90F98F4F22E173A50067F920 /* ClangFormatExtension.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		904EE67922E147A9000E924D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				904EE67322E13A33000E924D /* AppDelegate.swift */,
+				904EE67122E139C5000E924D /* LowercaseValueTransformer.swift */,
+				559B23E91D7EBDA300937AB3 /* MainMenu.xib */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		904EE67B22E14948000E924D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				904EE67C22E14948000E924D /* Configurations */,
+				90503E7A22E1E8ED00AE92A0 /* Sources */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		904EE67C22E14948000E924D /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				904EE68D22E14AB3000E924D /* LLVM.xcconfig */,
+				904EE68322E14968000E924D /* Project-Debug.xcconfig */,
+				904EE68422E14973000E924D /* Project-Release.xcconfig */,
+				904EE68222E1495F000E924D /* Project-Shared.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		904EE68522E149BF000E924D /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				904EE68822E14A1D000E924D /* Application-Debug.xcconfig */,
+				904EE68922E14A1D000E924D /* Application-Release.xcconfig */,
+				904EE68722E14A1D000E924D /* Application-Shared.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		904EE68622E149C6000E924D /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				904EE68B22E14A40000E924D /* SourceEditorExtension-Debug.xcconfig */,
+				904EE68C22E14A40000E924D /* SourceEditorExtension-Release.xcconfig */,
+				904EE68A22E14A40000E924D /* SourceEditorExtension-Shared.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		90503E7A22E1E8ED00AE92A0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				90503E7B22E1E8FA00AE92A0 /* Security.swift */,
+				90503E7E22E1EA4400AE92A0 /* UserDefaults.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		90EB746422E151CC0047A222 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90EB746622E151E60047A222 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		559B23DD1D7EBDA300937AB3 /* ClangFormat Configuration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559B23EF1D7EBDA300937AB3 /* Build configuration list for PBXNativeTarget "ClangFormat Configuration" */;
+			buildPhases = (
+				559B23DA1D7EBDA300937AB3 /* Sources */,
+				559B23DC1D7EBDA300937AB3 /* Resources */,
+				559B240A1D7EBDB700937AB3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B1624E122B57D9500338348 /* PBXTargetDependency */,
+			);
+			name = "ClangFormat Configuration";
+			productName = XcodeClangFormat;
+			productReference = 559B23DE1D7EBDA300937AB3 /* ClangFormat Configuration.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B1624D422B57D9500338348 /* Source Editor Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B1624E322B57D9500338348 /* Build configuration list for PBXNativeTarget "Source Editor Extension" */;
+			buildPhases = (
+				5B1624D122B57D9500338348 /* Sources */,
+				5B1624D222B57D9500338348 /* Frameworks */,
+				9066E06222E180AB00CA7361 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Source Editor Extension";
+			productName = "clang-format";
+			productReference = 5B1624D522B57D9500338348 /* ClangFormat.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		559B23D61D7EBDA300937AB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "The CocoaBots";
+				TargetAttributes = {
+					559B23DD1D7EBDA300937AB3 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HJKFVK94J4;
+						LastSwiftMigration = 1100;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					5B1624D422B57D9500338348 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = HJKFVK94J4;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 559B23D91D7EBDA300937AB3 /* Build configuration list for PBXProject "ClangFormat" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Base,
+			);
+			mainGroup = 559B23D51D7EBDA300937AB3;
+			productRefGroup = 559B23DF1D7EBDA300937AB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				559B23DD1D7EBDA300937AB3 /* ClangFormat Configuration */,
+				5B1624D422B57D9500338348 /* Source Editor Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		559B23DC1D7EBDA300937AB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EB746722E151E60047A222 /* Assets.xcassets in Resources */,
+				559B23EB1D7EBDA300937AB3 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		559B23DA1D7EBDA300937AB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90503E7F22E1EA4400AE92A0 /* UserDefaults.swift in Sources */,
+				904EE67422E13A33000E924D /* AppDelegate.swift in Sources */,
+				904EE67222E139C5000E924D /* LowercaseValueTransformer.swift in Sources */,
+				90503E7C22E1E8FA00AE92A0 /* Security.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B1624D122B57D9500338348 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90503E8022E1EA9700AE92A0 /* UserDefaults.swift in Sources */,
+				90F98F6822E174850067F920 /* ClangFormatExtension.swift in Sources */,
+				5B1624E722B57DAD00338348 /* ClangFormatCommand.mm in Sources */,
+				90503E7D22E1E90600AE92A0 /* Security.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B1624E122B57D9500338348 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B1624D422B57D9500338348 /* Source Editor Extension */;
+			targetProxy = 5B1624E022B57D9500338348 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		559B23E91D7EBDA300937AB3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				559B23EA1D7EBDA300937AB3 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		559B23ED1D7EBDA300937AB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904EE68322E14968000E924D /* Project-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		559B23EE1D7EBDA300937AB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904EE68422E14973000E924D /* Project-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		559B23F01D7EBDA300937AB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904EE68822E14A1D000E924D /* Application-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		559B23F11D7EBDA300937AB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904EE68922E14A1D000E924D /* Application-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		5B1624E422B57D9500338348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904EE68B22E14A40000E924D /* SourceEditorExtension-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		5B1624E522B57D9500338348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904EE68C22E14A40000E924D /* SourceEditorExtension-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		559B23D91D7EBDA300937AB3 /* Build configuration list for PBXProject "ClangFormat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559B23ED1D7EBDA300937AB3 /* Debug */,
+				559B23EE1D7EBDA300937AB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		559B23EF1D7EBDA300937AB3 /* Build configuration list for PBXNativeTarget "ClangFormat Configuration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559B23F01D7EBDA300937AB3 /* Debug */,
+				559B23F11D7EBDA300937AB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B1624E322B57D9500338348 /* Build configuration list for PBXNativeTarget "Source Editor Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B1624E422B57D9500338348 /* Debug */,
+				5B1624E522B57D9500338348 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 559B23D61D7EBDA300937AB3 /* Project object */;
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14845" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14845"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ClangFormat" customModuleProvider="target">
+            <connections>
+                <outlet property="formatPopUpButton" destination="AcA-QW-a5h" id="0DT-JK-mSl"/>
+                <outlet property="pathControl" destination="LdY-eS-tPq" id="PFK-hJ-jnJ"/>
+            </connections>
+        </customObject>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="ClangFormat for Xcode" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="ClangFormat for Xcode" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="About ClangFormat" id="5kV-Vb-QxS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                            <menuItem title="Services" id="NMo-om-nkz">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                            <menuItem title="Hide ClangFormat" keyEquivalent="h" id="Olw-nP-bQN">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="VT4-aY-XCT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="Kd2-mp-pUS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="Dhg-Le-xox"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                            <menuItem title="Quit ClangFormat" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-489" y="-217"/>
+        </menu>
+        <window title="ClangFormat Configuration" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" frameAutosaveName="ConfigurationWindow" animationBehavior="default" id="Tfy-oo-B9U">
+            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES"/>
+            <rect key="contentRect" x="196" y="240" width="425" height="61"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <value key="minSize" type="size" width="425" height="61"/>
+            <view key="contentView" id="hbe-7O-Bve">
+                <rect key="frame" x="0.0" y="0.0" width="425" height="61"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LdY-eS-tPq">
+                        <rect key="frame" x="206" y="17" width="196" height="25"/>
+                        <pathCell key="cell" selectable="YES" editable="YES" alignment="left" placeholderString="Select .clang-format file…" pathStyle="popUp" id="WlP-Qb-SYR">
+                            <font key="font" metaFont="system"/>
+                        </pathCell>
+                        <connections>
+                            <action selector="selectConfiguration:" target="Voe-Tx-rLC" id="Aiv-HF-72w"/>
+                            <outlet property="delegate" destination="Voe-Tx-rLC" id="beA-Ie-QJP"/>
+                        </connections>
+                    </pathControl>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fkq-6w-QVk">
+                        <rect key="frame" x="18" y="23" width="81" height="16"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Format Style" usesSingleLineMode="YES" id="qGD-03-Oal">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AcA-QW-a5h">
+                        <rect key="frame" x="103" y="17" width="101" height="25"/>
+                        <popUpButtonCell key="cell" type="push" title="LLVM" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="dY2-MU-bcL" id="y89-lT-Zfo">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" id="w97-AM-DW2">
+                                <items>
+                                    <menuItem title="LLVM" state="on" id="dY2-MU-bcL"/>
+                                    <menuItem title="Google" id="zOo-cj-QPl"/>
+                                    <menuItem title="Chromium" id="Eho-4a-7II"/>
+                                    <menuItem title="Mozilla" id="11L-R6-oug"/>
+                                    <menuItem title="WebKit" id="dNQ-MU-ty1"/>
+                                    <menuItem title="Custom" id="bHI-XM-ExK"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="selectFormatStyle:" target="Voe-Tx-rLC" id="I8m-RA-EMa"/>
+                        </connections>
+                    </popUpButton>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AcA-QW-a5h" firstAttribute="leading" secondItem="fkq-6w-QVk" secondAttribute="trailing" constant="8" symbolic="YES" id="CPK-rc-RAB"/>
+                    <constraint firstItem="LdY-eS-tPq" firstAttribute="leading" secondItem="AcA-QW-a5h" secondAttribute="trailing" constant="8" symbolic="YES" id="Ibd-Hi-fJu"/>
+                    <constraint firstItem="fkq-6w-QVk" firstAttribute="firstBaseline" secondItem="AcA-QW-a5h" secondAttribute="firstBaseline" id="LFy-Yi-jmG"/>
+                    <constraint firstItem="LdY-eS-tPq" firstAttribute="firstBaseline" secondItem="AcA-QW-a5h" secondAttribute="firstBaseline" id="Nxv-lb-w3b"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LdY-eS-tPq" secondAttribute="trailing" constant="20" symbolic="YES" id="QFp-oy-MvN"/>
+                    <constraint firstItem="AcA-QW-a5h" firstAttribute="top" secondItem="hbe-7O-Bve" secondAttribute="top" constant="20" symbolic="YES" id="bv8-YX-mzt"/>
+                    <constraint firstItem="fkq-6w-QVk" firstAttribute="leading" secondItem="hbe-7O-Bve" secondAttribute="leading" constant="20" symbolic="YES" id="fyk-Yi-bma"/>
+                    <constraint firstAttribute="bottom" secondItem="AcA-QW-a5h" secondAttribute="bottom" constant="20" symbolic="YES" id="nk3-aC-mEU"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-70" y="36"/>
+        </window>
+    </objects>
+</document>

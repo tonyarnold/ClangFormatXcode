@@ -1,54 +1,51 @@
-# XcodeClangFormat
+# ClangFormat for Xcode
 
-### [⚙ Download Latest Release](https://github.com/mapbox/XcodeClangFormat/releases/latest)
+### [Download](https://github.com/tonyarnold/ClangFormatXcode/releases/latest)
 
-This plugin written for Xcode 8's new plugin infrastructure uses Clang's `libclangFormat` library to format code according to a `.clang-format` file.
+This Xcode Source Editor Extension uses Clang's `libclangFormat` library to format code according to a user-provided `.clang-format` file, or one of the included styles. It was forked from [MapBox's brilliant original project](https://github.com/mapbox/XcodeClangFormat) and modified to suit my own purposes.
 
 Open the app, select a predefined style, or open the `.clang-format` file from your project:
 
-![](screenshot-config.png)
+![ClangFormat Configuration app](Shared/Screenshots/Configuration.png)
 
 Then, use the <kbd>Format Source Code</kbd> command in Xcode's <kbd>Editor</kbd> menu:
 
-![](screenshot-format.png)
+![Format Selected Source menu item](Shared/Screenshots/Format.png)
 
-Due to macOS Sandboxing restrictions, this Plugin behaves slightly differently compared to the command line `clang-format` command: It always uses the style selected in the configuration app, and will not use the nearest `.clang-format` file on disk.
+Due to sandboxing restrictions, this extension behaves slightly differently to the command line `clang-format` command: It will always use the style selected in the configuration app, and will not use the nearest `.clang-format` file on disk.
 
 
 ## Installing
 
-Download the precompiled app or [build it yourself](#building), then open the app. You might have to right click on the app bundle, and choose <kbd>Open</kbd> to run non-codesigned applications. Then,
+Download the binary release, or [build it yourself](#building), then open the app. Then,
 
-* On OS X 10.11, you'll need to run `sudo /usr/libexec/xpccachectl`, then **reboot** to enable app extensions.
-* On macOS Sierra, extensions should be loaded by default.
+Then, go to *System Preferences* → *Extensions*, and make sure that **ClangFormat** in the *Xcode Source Editor* section is checked:
 
-Then, go to *System Preferences* → *Extensions*, and make sure that **clang-format** in the *Xcode Source Editor* section is checked:
-
-![](screenshot-extensions.png)
+![System Preferences Extensions](Shared/Screenshots/Extensions.png)
 
 
-## Keyboard shortcut
+## Setting a key binding
 
-To define a keyboard shortcut, open *System Preferences*, click on *Keyboard*, and switch to the *Shortcuts* tab. In the list on the left, select *App Shortcuts*, then hit the <kbd>+</kbd> button. Select Xcode, enter `Format Source Code`, and define a shortcut of your liking.
+To define a key binding, open *Xcode's Preferences*, click on *Key Bindings*, and filter for `ClangFormat`. Once you have found the menu name, define a key of your liking to trigger the formatting.
 
-![](screenshot-shortcut.png)
+![Xcode Key Bindings preferences](Shared/Screenshots/KeyBindings.png)
 
 
 ## Building
 
-To build XcodeClangFormat, run `./configure` on the command line, then build the XcodeClangFormat scheme in the included Xcode project.
+To build ClangFormat, run `./configure` on the command line, then build the "ClangFormat Configuration" scheme in the included Xcode project.
 
 
 ## FAQ
 
 ##### Why aren't you just using the `.clang-format` file in the file's parent folder?
-Xcode code formatting extensions are severely limited and don't have access to the file system. They also don't get to know the file name of the file to be changed, so there's no way for this extension to load the correct file.
+
+Xcode source editor extensions have very limited access to your system - the don't have access to the file system, only to the text in the current editor when you run the command. They also don't get to know the file name of the file to be changed, so there's not enough information available for this extension to know where to load the correct file from.
 
 ##### Could you please add “Format on Save”?
-The Xcode extension mechanism doesn't allow that; the only thing you can do is return the altered source code.
 
-##### Why doesn't the menu item show up?
-If you're using macOS Sierra, please follow the [installing](#installing) guide. on OS X 10.11, I haven't found a way to make this extension work besides [manually building it](#building).
+Xcode source editor extensions don't allow this; the only thing you can do is return the altered source code.
 
-##### When compiling, I'm getting `'clang/Format/Format.h' file not found`.
-Make sure that you're running `./configure` in the root folder. This downloads and unpacks the precompiled libraries and headers from the llvm.org that are required for compiling.
+##### When compiling, I'm seeing the error `'clang/Format/Format.h' file not found`
+
+Ensure that you've run `./configure` in the project directory before trying to build the project from within Xcode. This script downloads and decompresses the precompiled libraries and headers from llvm.org that are required for building the project.

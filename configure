@@ -4,15 +4,15 @@ set -e
 set -o pipefail
 set -u
 
-LLVM_VERSION=5.0.0
-LLVM_HASH=633f15fe09e6d9f0651add6c4a65e6f68da9809180c196c29573d96ec64a5c1f
+LLVM_VERSION=8.0.0
+LLVM_HASH=a5674f2ce5b9ed1b67d92689d319ed3b46d66e29
 LLVM_CONFIG=${LLVM_CONFIG:-llvm-config}
 
 command -v "${LLVM_CONFIG}" >/dev/null 2>&1 || {
-    PREFIX="deps/clang-${LLVM_VERSION}"
+    PREFIX="Dependencies/clang-${LLVM_VERSION}"
     if [ ! -f "${PREFIX}/bin/llvm-config" ]; then
-        mkdir -p "deps"
-        FILE="deps/clang-${LLVM_VERSION}.tar.xz"
+        mkdir -p "Dependencies"
+        FILE="Dependencies/clang-${LLVM_VERSION}.tar.xz"
         if [ ! -f "${FILE}" ]; then
             URL="http://llvm.org/releases/${LLVM_VERSION}/clang+llvm-${LLVM_VERSION}-x86_64-apple-darwin.tar.xz"
             echo "Downloading ${URL}..."
@@ -29,15 +29,21 @@ command -v "${LLVM_CONFIG}" >/dev/null 2>&1 || {
     LLVM_CONFIG="${PREFIX}/bin/llvm-config"
 }
 
-PREFIX="$("${LLVM_CONFIG}" --prefix)"
-case "${PREFIX}" in
-  *\ *) (>&2 echo "Error: Path to LLVM may not contain spaces: '${PREFIX}'"); exit 1 ;;
-esac
+echo "// Please do not modify this file. Instead, rerun ./configure" > Shared/Configurations/LLVM.xcconfig
+LLVM_LIBDIR=$(${LLVM_CONFIG} --libdir)
+echo "LLVM_LIBDIR=${LLVM_LIBDIR}" >> Shared/Configurations/LLVM.xcconfig
+echo "LLVM_CXXFLAGS=$(${LLVM_CONFIG} --cxxflags)" >> Shared/Configurations/LLVM.xcconfig
 
-echo "// Do not modify this file. Instead, rerun ./configure" > config.xcconfig
-echo "LLVM_LIBDIR=$(${LLVM_CONFIG} --libdir)" >> config.xcconfig
-echo "LLVM_CXXFLAGS=$(${LLVM_CONFIG} --cxxflags)" >> config.xcconfig
+LLVM_ARCHIVES=""
 
-echo "Wrote config.xcconfig."
+for archive in "${LLVM_LIBDIR}"/*.a
+do
+    LLVM_ARCHIVES="${LLVM_ARCHIVES}${archive} "
+done
 
-open XcodeClangFormat.xcodeproj
+echo "LLVM_ARCHIVES=${LLVM_ARCHIVES}" >> Shared/Configurations/LLVM.xcconfig
+echo "Wrote Shared/Configurations/LLVM.xcconfig"
+
+rm "${LLVM_LIBDIR}"/*.dylib "${LLVM_LIBDIR}"/*.so
+
+open ClangFormat.xcodeproj
