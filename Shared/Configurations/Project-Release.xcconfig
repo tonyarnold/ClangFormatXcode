@@ -1,3 +1,6 @@
 #include "Project-Shared.xcconfig"
 
 DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+
+// Code Generation
+SWIFT_COMPILATION_MODE = wholemodule

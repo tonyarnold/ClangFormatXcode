@@ -18,8 +18,9 @@
 		90503E7D22E1E90600AE92A0 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90503E7B22E1E8FA00AE92A0 /* Security.swift */; };
 		90503E7F22E1EA4400AE92A0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90503E7E22E1EA4400AE92A0 /* UserDefaults.swift */; };
 		90503E8022E1EA9700AE92A0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90503E7E22E1EA4400AE92A0 /* UserDefaults.swift */; };
+		906B1BA925022ACB00736AFA /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F98F6422E174600067F920 /* XcodeKit.framework */; };
+		906B1BAA25022ACB00736AFA /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 90F98F6422E174600067F920 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		90EB746722E151E60047A222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90EB746622E151E60047A222 /* Assets.xcassets */; };
-		90F98F6522E174600067F920 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F98F6422E174600067F920 /* XcodeKit.framework */; };
 		90F98F6822E174850067F920 /* ClangFormatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F98F4F22E173A50067F920 /* ClangFormatExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,13 +46,15 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9066E06222E180AB00CA7361 /* CopyFiles */ = {
+		9066E06222E180AB00CA7361 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				906B1BAA25022ACB00736AFA /* XcodeKit.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -87,6 +90,7 @@
 		90EB746622E151E60047A222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90F98F4F22E173A50067F920 /* ClangFormatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClangFormatExtension.swift; sourceTree = "<group>"; };
 		90F98F6422E174600067F920 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		EA963B0322E361A3007F124E /* ClangFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClangFormat.entitlements; sourceTree = "<group>"; };
 		EAC4144722E1F4B00039A890 /* VersionInformation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VersionInformation.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,8 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906B1BA925022ACB00736AFA /* XcodeKit.framework in Frameworks */,
 				5B1624D622B57D9500338348 /* Cocoa.framework in Frameworks */,
-				90F98F6522E174600067F920 /* XcodeKit.framework in Frameworks */,
 				5B1624E822B57E5500338348 /* libcurses.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +154,7 @@
 		559B24111D7EBDC400937AB3 /* Source Editor Extension */ = {
 			isa = PBXGroup;
 			children = (
+				EA963B0322E361A3007F124E /* ClangFormat.entitlements */,
 				904EE68622E149C6000E924D /* Configurations */,
 				904EE67822E147A2000E924D /* Sources */,
 				559B24121D7EBDC400937AB3 /* Supporting Files */,
@@ -280,7 +285,7 @@
 			buildPhases = (
 				5B1624D122B57D9500338348 /* Sources */,
 				5B1624D222B57D9500338348 /* Frameworks */,
-				9066E06222E180AB00CA7361 /* CopyFiles */,
+				9066E06222E180AB00CA7361 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,8 +302,9 @@
 		559B23D61D7EBDA300937AB3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = NO;
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "The CocoaBots";
 				TargetAttributes = {
 					559B23DD1D7EBDA300937AB3 = {
@@ -324,11 +330,11 @@
 			};
 			buildConfigurationList = 559B23D91D7EBDA300937AB3 /* Build configuration list for PBXProject "ClangFormat" */;
 			compatibilityVersion = "Xcode 11.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				Base,
+				en,
 			);
 			mainGroup = 559B23D51D7EBDA300937AB3;
 			productRefGroup = 559B23DF1D7EBDA300937AB3 /* Products */;
@@ -409,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 904EE68422E14973000E924D /* Project-Release.xcconfig */;
 			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Release;
 		};
