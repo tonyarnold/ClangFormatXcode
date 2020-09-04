@@ -90,7 +90,6 @@
 		90EB746622E151E60047A222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90F98F4F22E173A50067F920 /* ClangFormatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClangFormatExtension.swift; sourceTree = "<group>"; };
 		90F98F6422E174600067F920 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
-		EA963B0322E361A3007F124E /* ClangFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClangFormat.entitlements; sourceTree = "<group>"; };
 		EAC4144722E1F4B00039A890 /* VersionInformation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VersionInformation.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +153,6 @@
 		559B24111D7EBDC400937AB3 /* Source Editor Extension */ = {
 			isa = PBXGroup;
 			children = (
-				EA963B0322E361A3007F124E /* ClangFormat.entitlements */,
 				904EE68622E149C6000E924D /* Configurations */,
 				904EE67822E147A2000E924D /* Sources */,
 				559B24121D7EBDC400937AB3 /* Supporting Files */,
