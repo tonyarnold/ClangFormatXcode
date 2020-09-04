@@ -4,8 +4,8 @@ set -e
 set -o pipefail
 set -u
 
-LLVM_VERSION=8.0.0
-LLVM_HASH=a5674f2ce5b9ed1b67d92689d319ed3b46d66e29
+LLVM_VERSION=10.0.1
+LLVM_HASH=72cb951535b3e7b8035836973f8995d7852df3b6
 LLVM_CONFIG=${LLVM_CONFIG:-llvm-config}
 
 command -v "${LLVM_CONFIG}" >/dev/null 2>&1 || {
@@ -14,7 +14,7 @@ command -v "${LLVM_CONFIG}" >/dev/null 2>&1 || {
         mkdir -p "Dependencies"
         FILE="Dependencies/clang-${LLVM_VERSION}.tar.xz"
         if [ ! -f "${FILE}" ]; then
-            URL="http://llvm.org/releases/${LLVM_VERSION}/clang+llvm-${LLVM_VERSION}-x86_64-apple-darwin.tar.xz"
+            URL="https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/clang+llvm-${LLVM_VERSION}-x86_64-apple-darwin.tar.xz"
             echo "Downloading ${URL}..."
             curl --retry 3 -# -S -L "${URL}" -o "${FILE}.tmp" && mv "${FILE}.tmp" "${FILE}"
         fi
